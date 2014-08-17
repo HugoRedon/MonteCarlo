@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="584.0" prefWidth="918.0" xmlns:fx="http://javafx.com/fxml" fx:controller="montecarlo.MonteCarloView">
+  <children>
+    <TabPane prefHeight="548.0" prefWidth="627.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab closable="false" text="VPN vs probabilidad">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="692.0">
+              <children>
+                <ScatterChart fx:id="vpnProbChart" prefHeight="543.0" prefWidth="557.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="0.0">
+                  <xAxis>
+                    <NumberAxis fx:id="vpnAxis" forceZeroInRange="false" label="VPN [$]" side="BOTTOM" />
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis forceZeroInRange="false" label="Probabilidad" minorTickCount="0" minorTickLength="0.0" minorTickVisible="false" side="LEFT" tickUnit="1.0" />
+                  </yAxis>
+                </ScatterChart>
+                <ToggleButton fx:id="vpnToggle" mnemonicParsing="false" onAction="#vpnProbPaint" prefWidth="99.0" text="VPN" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="42.0" />
+                <ToggleButton id="vpnToggle" fx:id="vpnCumulativeProbToggle" mnemonicParsing="false" onAction="#vpnCumulativeProbPaint" prefWidth="113.0" text="P acumulada" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="83.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Numeros aleatorios">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="543.0" prefWidth="829.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#vpnFrequencyPaint" text="Frecuencias" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="45.0" />
+                <ScatterChart id="ScatterChartNxN" fx:id="randomFrequencyChart" prefHeight="543.0" prefWidth="660.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="258.0" AnchorPane.topAnchor="0.0">
+                  <xAxis>
+                    <NumberAxis label="VPN [$]" side="BOTTOM" />
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis label="Frecuencia" minorTickCount="0" minorTickLength="0.0" minorTickVisible="false" side="LEFT" tickUnit="1.0" />
+                  </yAxis>
+                </ScatterChart>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Media:" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="109.0" />
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Desviación Estandar:" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="142.0" />
+                <TextField fx:id="mediaTextField" prefHeight="21.0" prefWidth="164.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="108.0" />
+                <TextField id="mediaTextField" fx:id="deviationTextField" prefHeight="21.0" prefWidth="171.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="169.0" />
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="n:" AnchorPane.rightAnchor="236.0" AnchorPane.topAnchor="202.0" />
+                <TextField id="mediaTextField" fx:id="nTextField" prefHeight="21.0" prefWidth="186.3369140625" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="202.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
